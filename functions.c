@@ -84,7 +84,7 @@ void display_stats(char name[])
 		printf("%s\n\n","Difficulty:Medium");
 	else
 		printf("%s\n\n","Difficulty:Hard");
-
+	load_score();
 	pause();
 }
 
@@ -92,7 +92,7 @@ void play(char name[])
 {
 	//This function starts and controls the game
 	int i,j,times;
-	char moves[3];
+	char moves[3],ans;
 
 	table=NULL;
 	head=NULL;
@@ -176,6 +176,13 @@ void play(char name[])
 		else if(moves[0]=='x' || moves[0]=='X')
 		{
 			printf("%s%s%d\n",name," your score is ",score );
+			do
+			{
+				printf("Do you want to save your score?(y/n): ");
+				ans = getchar();
+			}while(ans != 'y' && ans != 'n');
+			if (ans == 'y')
+				save_score(name);
 			pause();
 			died=1;
 		}
