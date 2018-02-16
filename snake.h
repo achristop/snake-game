@@ -1,5 +1,5 @@
 #define VERSION 1.0
-#define AUTHOR "Andrew Christopoulos"
+#define AUTHOR "Andreas Christopoulos"
 #define MAIL "zrn6770@gmail.com"
 #define N_MAX 36
 #define M_MAX 36
