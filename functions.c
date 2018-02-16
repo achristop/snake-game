@@ -176,13 +176,6 @@ void play(char name[])
 		else if(moves[0]=='x' || moves[0]=='X')
 		{
 			printf("%s%s%d\n",name," your score is ",score );
-			do
-			{
-				printf("Do you want to save your score?(y/n): ");
-				ans = getchar();
-			}while(ans != 'y' && ans != 'n');
-			if (ans == 'y')
-				save_score(name);
 			pause();
 			died=1;
 		}
@@ -196,6 +189,14 @@ void play(char name[])
 			pause();
 		}
 	}
+	do
+	{
+		printf("Do you want to save your score?(y/n): ");
+		ans = getchar();
+	}while(ans != 'y' && ans != 'n');
+	
+	if (ans == 'y')
+		save_score(name);
 	freeTable();
 	freeSnake();
 }
